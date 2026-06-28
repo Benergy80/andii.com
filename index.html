@@ -98,6 +98,22 @@
   .inquire .lede{max-width:48ch;margin:28px auto 0;font-size:18px;color:#2a2a2a}
   .inquire .lines{margin-top:48px;display:flex;flex-direction:column;gap:10px;align-items:center;font-size:17px}
   .inquire a{border-bottom:1px solid var(--bronze);padding-bottom:2px}
+  .contact{max-width:560px;margin:46px auto 0;text-align:left;display:flex;flex-direction:column;gap:16px}
+  .contact .row2{display:flex;gap:16px}
+  .contact .row2>*{flex:1}
+  .contact input,.contact textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--moon);
+     padding:12px 2px;font-family:var(--sans);font-size:16px;color:var(--basalt);font-weight:300}
+  .contact input:focus,.contact textarea:focus{outline:0;border-bottom-color:var(--bronze)}
+  .contact textarea{resize:vertical;min-height:120px}
+  .contact ::placeholder{color:#9a948a;opacity:1}
+  .contact button{margin-top:10px;align-self:flex-start;background:var(--night);color:var(--bone);border:0;
+     font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 34px;cursor:pointer;transition:background .2s}
+  .contact button:hover{background:var(--bronze)}
+  .contact button:disabled{opacity:.5;cursor:default}
+  .inquire .orline{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:#6a6258}
+  .inquire .orline a{border-bottom:1px solid var(--bronze)}
+  .contact .ok{font-family:var(--serif);font-size:22px;color:var(--bronze)}
+  @media(max-width:860px){.contact .row2{flex-direction:column}}
 
   footer{background:var(--night);color:var(--moon);padding:70px 0}
   footer .grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
@@ -240,13 +256,41 @@
     <span class="cap">Inquiries</span>
     <h2>Acquire &amp; collaborate</h2>
     <p class="lede">For collection inquiries, gallery representation, and commissions, we would be glad to hear from you.</p>
-    <div class="lines">
-      <a href="mailto:benstagl@chilab.studio">benstagl@chilab.studio</a>
-      <a href="mailto:allyreza@chilab.studio">allyreza@chilab.studio</a>
-      <span style="color:#6a6258">Chicago, Illinois</span>
-    </div>
+
+    <form class="contact" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="e2f593b1-7809-438c-82d2-3768283dce57">
+      <input type="hidden" name="subject" value="New inquiry from andii.com">
+      <input type="hidden" name="from_name" value="ANDII Website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="row2">
+        <input name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <textarea name="message" placeholder="Tell us about your inquiry" required></textarea>
+      <button type="submit">Send inquiry</button>
+    </form>
+    <p class="orline" id="contactNote">or write to <a href="mailto:inquiries@andii.com">inquiries@andii.com</a> · Chicago, Illinois</p>
   </div>
 </section>
+
+<script>
+  (function(){
+    var f=document.getElementById('contactForm');
+    if(!f)return;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=f.querySelector('button');
+      btn.disabled=true;btn.textContent='Sending…';
+      fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(d.success){f.innerHTML='<p class="ok">Thank you. We will be in touch.</p>';}
+          else{btn.disabled=false;btn.textContent='Send inquiry';alert('Something went wrong. Please email inquiries@andii.com.');}
+        })
+        .catch(function(){btn.disabled=false;btn.textContent='Send inquiry';alert('Something went wrong. Please email inquiries@andii.com.');});
+    });
+  })();
+</script>
 
 <footer>
   <div class="wrap grid">
