@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ANDII — Authored Collectible Design</title>
+<meta name="description" content="ANDII is the authored collectible design practice of Ben Stagl and Ally Reza. Cast glass and metal. Sky and stone." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F4F0E8; --night:#050608; --basalt:#111111; --sandstone:#C7AD88;
+    --bronze:#7A5A3A; --glass:#AFC7CD; --moon:#D8D5CC; --clay:#9A4F32;
+    --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"Spline Sans Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bone);color:var(--basalt);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-0.01em;line-height:1.04}
+  a{color:inherit;text-decoration:none}
+  .cap{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--bronze)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+  section{padding:140px 0}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:22px 40px;mix-blend-mode:difference;color:#fff}
+  nav .mark{font-family:var(--serif);font-size:22px;letter-spacing:0.32em;padding-left:0.32em}
+  nav .links{display:flex;gap:34px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase}
+  nav .links a{opacity:.85}nav .links a:hover{opacity:1}
+
+  /* hero */
+  .hero{height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;
+        padding-bottom:8vh;position:relative;overflow:hidden;color:var(--basalt)}
+  .hero-bg{position:absolute;inset:0;z-index:-1;
+     background:#050608 url('images/skygem-2.jpg') center/cover no-repeat;}
+  .hero-bg:after{content:"";position:absolute;inset:0;
+     background:linear-gradient(180deg, rgba(5,6,8,.30) 0%, rgba(5,6,8,0) 34%, rgba(5,6,8,.80) 100%);}
+  .hero h1{font-size:clamp(72px,15vw,200px);letter-spacing:0.04em;padding-left:0.04em;color:var(--bone)}
+  .hero .lede{font-size:clamp(18px,2.1vw,24px);max-width:620px;margin-top:26px;color:#e6e4dd;font-weight:300}
+  .hero .keys{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--glass);margin-top:26px}
+  .hero .topcap{position:absolute;top:120px;left:40px;color:var(--glass)}
+
+  /* statement */
+  .statement{text-align:left}
+  .statement .big{font-family:var(--serif);font-size:clamp(28px,4.4vw,52px);max-width:18ch;line-height:1.12}
+  .statement p{max-width:60ch;margin-top:34px;font-size:18px;color:#2a2a2a}
+  .rule{height:1px;background:var(--moon);border:0;margin:0}
+
+  /* collection (dark) */
+  .collection{background:var(--night);color:var(--bone)}
+  .collection .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .collection .panel{aspect-ratio:4/5;border:1px solid #20242a;
+     background:
+       radial-gradient(90% 70% at 50% 8%, #16202a 0%, #0b0e12 55%, #050608 100%);
+     position:relative;display:flex;align-items:flex-end;padding:26px}
+  .collection .panel:before{content:"";position:absolute;left:26px;right:26px;top:26px;bottom:26px;
+     border:1px solid rgba(175,199,205,.16)}
+  .collection .panel span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--glass)}
+  .collection h2{font-size:clamp(40px,6vw,84px);color:var(--bone)}
+  .collection .cap{color:var(--glass)}
+  .collection p{margin-top:26px;max-width:46ch;color:#cfd2cf;font-size:18px}
+
+  /* works */
+  .works .cap{display:block;margin-bottom:46px}
+  .works .row{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+  .work .frame{aspect-ratio:1;border:1px solid var(--moon);background:var(--sandstone);
+     position:relative;overflow:hidden}
+  .work:nth-child(1) .frame{background:linear-gradient(160deg,#d7e0e2,#AFC7CD 60%,#8aa6ac)}
+  .work:nth-child(2) .frame{background:linear-gradient(160deg,#cdb79a,#C7AD88 55%,#7A5A3A)}
+  .work:nth-child(3) .frame{background:linear-gradient(160deg,#2a2d33,#111 60%,#050608)}
+  .work .frame em{position:absolute;left:18px;bottom:16px;font-style:normal;font-family:var(--mono);
+     font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(17,17,17,.5)}
+  .work:nth-child(3) .frame em{color:rgba(216,213,204,.6)}
+  .work h3{font-size:24px;margin-top:22px}
+  .work .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#6a6258;margin-top:8px;text-transform:none}
+
+  /* materials (dark, two columns) */
+  .materials{background:var(--night);color:var(--bone)}
+  .materials .grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #20242a}
+  .materials .col{padding:64px 54px}
+  .materials .col+.col{border-left:1px solid #20242a}
+  .materials h3{font-size:clamp(30px,4vw,46px);color:var(--bone)}
+  .materials .who{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--glass);margin-bottom:20px}
+  .materials p{margin-top:22px;max-width:40ch;color:#cfd2cf}
+
+  /* studio */
+  .studio .grid{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+  .studio h2{font-size:clamp(36px,5vw,64px);margin-bottom:60px}
+  .studio h3{font-size:26px}
+  .studio .who{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin-top:10px}
+  .studio p{margin-top:18px;max-width:46ch;color:#2a2a2a}
+
+  /* inquire */
+  .inquire{text-align:center;padding:160px 0}
+  .inquire h2{font-size:clamp(40px,7vw,92px)}
+  .inquire .lede{max-width:48ch;margin:28px auto 0;font-size:18px;color:#2a2a2a}
+  .inquire .lines{margin-top:48px;display:flex;flex-direction:column;gap:10px;align-items:center;font-size:17px}
+  .inquire a{border-bottom:1px solid var(--bronze);padding-bottom:2px}
+
+  footer{background:var(--night);color:var(--moon);padding:70px 0}
+  footer .grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+  footer .mk{font-family:var(--serif);font-size:30px;letter-spacing:.3em;color:var(--bone)}
+  footer .small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#8b8f8a;line-height:2}
+
+  @media(max-width:860px){
+    section{padding:96px 0}.wrap{padding:0 24px}
+    nav{padding:18px 24px}.nav-links-hide{display:none}
+    .collection .grid,.studio .grid,.materials .grid,.works .row{grid-template-columns:1fr;gap:40px}
+    .materials .col+.col{border-left:0;border-top:1px solid #20242a}
+    .hero .topcap{left:24px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="mark">ANDII</div>
+  <div class="links nav-links-hide">
+    <a href="#collection">Collection</a>
+    <a href="#works">Work</a>
+    <a href="#studio">Studio</a>
+    <a href="#inquire">Inquire</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="topcap cap">Authored collectible design</div>
+  <div class="wrap">
+    <h1>ANDII</h1>
+    <p class="lede">Collectible furniture, lighting, and spatial objects in cast glass and metal. An authored studio by Ben Stagl and Ally Reza. Not a fabrication shop — a voice.</p>
+    <p class="keys">Cast Glass · Metal · Light · Gravity · Sky · Stone</p>
+  </div>
+</header>
+
+<section class="statement">
+  <div class="wrap">
+    <span class="cap">The practice</span>
+    <p class="big" style="margin-top:24px">A Chicago studio by Ben Stagl and Ally Reza, merging material craft with digital fabrication in work that feels at once ancient and future-facing.</p>
+    <p>ANDII grows out of ChiLab's years of making ambitious work for artists, architects, brands, and public spaces, but shifts the center of gravity from fabrication-for-hire to original authorship. Same hands. New voice.</p>
+    <p>The name is rooted in <em>androgenii</em>, the fusion of energies. AND is conjunction and partnership, a meeting point; II is two authors, two energies, two material histories. The work joins Ally's cast glass to Ben's metal in objects made to be lived with, released in editions for the collectible and gallery context.</p>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="collection" id="collection">
+  <div class="wrap">
+    <div class="grid">
+      <div class="panel" style="padding:0">
+        <img src="images/vanity-mirror-maquettes.jpg" alt="Sky and Stone, Vanity Mirror maquettes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+      </div>
+      <div>
+        <span class="cap">First collection</span>
+        <h2>Sky <span style="font-style:italic">and</span> Stone</h2>
+        <p>A body of work inspired by New Mexico: vast skies, mineral landscapes, desert light, and the contrast between celestial space and grounded matter.</p>
+        <p><b style="font-weight:500;color:var(--bone)">Sky</b> is light made physical — glass, atmosphere, reflection, celestial movement. <b style="font-weight:500;color:var(--bone)">Stone</b> is grounded and mineral — gravity, metal, heat, permanence, form that holds its place. Mineral mass that anchors the luminous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="wrap">
+    <span class="cap">Selected works</span>
+    <div class="row">
+      <article class="work">
+        <div class="frame"><img src="images/skygem-3.jpg" alt="Skygem" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Skygem</h3>
+        <p class="meta">Blackened steel with pyrite. Edition.</p>
+      </article>
+      <article class="work">
+        <div class="frame"><img src="images/pyramid-pair-1.jpg" alt="Pyramid Pair" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Pyramid Pair</h3>
+        <p class="meta">Cast and patinated metal with stone. Edition.</p>
+      </article>
+      <article class="work">
+        <div class="frame"><img src="images/vanity-mirror-1.jpg" alt="Vanity Mirror" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Vanity Mirror</h3>
+        <p class="meta">Polished metal and stone. Edition.</p>
+      </article>
+      <article class="work">
+        <div class="frame"><img src="images/encrusted-closed-cuff-1.jpg" alt="Encrusted Closed Cuff" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Encrusted Closed Cuff</h3>
+        <p class="meta">Patinated metal encrusted with pyrite. Edition.</p>
+      </article>
+      <article class="work">
+        <div class="frame"><img src="images/encrusted-open-cuff-1.jpg" alt="Encrusted Open Cuff" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Encrusted Open Cuff</h3>
+        <p class="meta">Patinated metal encrusted with pyrite. Edition.</p>
+      </article>
+    </div>
+    <p style="margin-top:40px;max-width:52ch;color:#6a6258;font-size:15px">From the Sky and Stone collection. More works added as the catalogue grows.</p>
+  </div>
+</section>
+
+<section class="materials">
+  <div class="wrap">
+    <span class="cap" style="color:var(--glass);display:block;margin-bottom:18px">Two material languages</span>
+    <p style="max-width:54ch;color:#cfd2cf;font-size:18px;margin-bottom:46px">Cast glass and metal both remember transformation. They begin as heat, become fluid, take the shape of a mold, and return to solidity carrying every decision made along the way.</p>
+    <div class="grid">
+      <div class="col">
+        <div class="who">Glass — Ally Reza</div>
+        <h3>Cast glass</h3>
+        <p>Kiln-cast, slumped, and polished. Glass as light made solid: clarity, color held in the body, the cool reference to sky.</p>
+      </div>
+      <div class="col">
+        <div class="who">Metal — Ben Stagl</div>
+        <h3>Cast &amp; fabricated metal</h3>
+        <p>Bronze, aluminum, and steel, cast and worked, darkened and patinated. Metal as weight and ground: shadow, reflection, the held stone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="studio" id="studio">
+  <div class="wrap">
+    <h2>The makers</h2>
+    <div class="grid">
+      <div>
+        <h3>Ben Stagl</h3>
+        <div class="who">Metal · fabrication</div>
+        <p>Artist and fabricator with an MFA in Sculpture from the School of the Art Institute of Chicago. Two decades of cast and fabricated metal, from foundry bronze to architectural commissions, including permanent public works across Chicago and beyond.</p>
+      </div>
+      <div>
+        <h3>Ally Reza</h3>
+        <div class="who">Glass · material</div>
+        <p>Glass artist and maker whose work expands cast and slumped glass across sculpture, lighting, and object design, from collectible editions to permanent installations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="inquire" id="inquire">
+  <div class="wrap">
+    <span class="cap">Inquiries</span>
+    <h2>Acquire &amp; collaborate</h2>
+    <p class="lede">For collection inquiries, gallery representation, and commissions, we would be glad to hear from you.</p>
+    <div class="lines">
+      <a href="mailto:benstagl@chilab.studio">benstagl@chilab.studio</a>
+      <a href="mailto:allyreza@chilab.studio">allyreza@chilab.studio</a>
+      <span style="color:#6a6258">Chicago, Illinois</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap grid">
+    <div class="mk">ANDII</div>
+    <div class="small">
+      Authored collectible design — Ben Stagl + Ally Reza<br>
+      Cast glass and metal · Sky and stone · Chicago, IL<br>
+      AND, partnership. II, two authors.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
