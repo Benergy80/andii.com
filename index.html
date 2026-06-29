@@ -107,6 +107,16 @@
   .work h3{font-size:24px;margin-top:22px}
   .work .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#6a6258;margin-top:8px;text-transform:none}
 
+  /* minerals (dark) — above and below */
+  .minerals{background:var(--night);color:var(--bone)}
+  .minerals .cap{color:var(--glass)}
+  .minerals .big{font-family:var(--serif);font-size:clamp(26px,4vw,48px);max-width:22ch;line-height:1.14;color:var(--bone);margin-top:18px}
+  .minerals .lede{max-width:62ch;margin-top:28px;color:#cfd2cf;font-size:18px}
+  .minerals .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 44px;margin-top:64px}
+  .minerals .m h4{font-family:var(--serif);font-weight:300;font-size:25px;color:var(--bone);letter-spacing:-0.01em}
+  .minerals .m p{margin-top:12px;color:#aeb3b0;font-size:15px;line-height:1.65;max-width:34ch}
+  @media(max-width:860px){.minerals .mgrid{grid-template-columns:1fr;gap:30px}}
+
   /* materials (dark, two columns) */
   .materials{background:var(--night);color:var(--bone)}
   .materials .grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #20242a}
@@ -254,6 +264,36 @@
         <h3>Mirage</h3>
         <p class="meta">Floor mirror on calcite. Edition.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="minerals" id="minerals">
+  <div class="wrap">
+    <span class="cap">Above and Below</span>
+    <p class="big">We mine raw minerals from the earth and set them beneath forms that hold the sky.</p>
+    <p class="lede">The stone is never only a pedestal. It is half of the work — matter pulled from the ground, joined to light, glass, and reflection. Each piece is a meeting point: what lies below bound to what passes above. Selenite, calcite, obsidian, pyrite, and sapphire each bring their own weight, color, and memory into the object.</p>
+    <div class="mgrid">
+      <div class="m">
+        <h4>Selenite</h4>
+        <p>Translucent gypsum, grown in long crystal beds. A lunar stone that carries light through its body and seems to glow from within.</p>
+      </div>
+      <div class="m">
+        <h4>Calcite</h4>
+        <p>Soft sky-blue and luminous white. A cool, banded mass that reads like clouded light made solid — the nearest the ground comes to atmosphere.</p>
+      </div>
+      <div class="m">
+        <h4>Obsidian</h4>
+        <p>Volcanic glass cooled in an instant. The oldest mirror humankind knew — dark, depthless, made for scrying.</p>
+      </div>
+      <div class="m">
+        <h4>Pyrite</h4>
+        <p>Crystalline gold struck from rock. Hard geometry and a warm metallic fire that catches and throws the light.</p>
+      </div>
+      <div class="m">
+        <h4>Sapphire</h4>
+        <p>Deep mineral blue, the weight of night held in a single stone. Rare, dense, and quietly luminous.</p>
+      </div>
     </div>
   </div>
 </section>
