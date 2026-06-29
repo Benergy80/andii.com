@@ -62,6 +62,17 @@
   .collection .cap{color:var(--glass)}
   .collection p{margin-top:26px;max-width:46ch;color:#cfd2cf;font-size:18px}
 
+  /* mirror band (full-bleed sky-reflecting background) */
+  .mirror-band{position:relative;min-height:78vh;display:flex;align-items:flex-end;
+     padding:0 0 9vh;overflow:hidden;color:var(--bone)}
+  .mirror-band-bg{position:absolute;inset:0;z-index:-1;
+     background:#050608 url('images/selenite.jpg') center 38%/cover no-repeat;}
+  .mirror-band-bg:after{content:"";position:absolute;inset:0;
+     background:linear-gradient(180deg, rgba(5,6,8,.30) 0%, rgba(5,6,8,0) 32%, rgba(5,6,8,.82) 100%);}
+  .mirror-band .cap{color:var(--glass)}
+  .mirror-band h2{font-size:clamp(40px,7vw,92px);color:var(--bone);margin-top:14px;letter-spacing:-0.01em}
+  .mirror-band p{max-width:54ch;margin-top:22px;color:#e6e4dd;font-size:18px}
+
   /* works */
   .works .cap{display:block;margin-bottom:46px}
   .works .row{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
@@ -191,58 +202,60 @@
         <p class="meta">Blackened steel with pyrite. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame"><img src="images/pyramid-pair-1.jpg" alt="Pyramid Pair" style="width:100%;height:100%;object-fit:cover" /></div>
-        <h3>Pyramid Pair</h3>
-        <p class="meta">Cast and patinated metal with stone. Edition.</p>
+        <div class="frame"><img src="images/pyramid-pair-1.jpg" alt="Dyad in Glass" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Dyad in Glass</h3>
+        <p class="meta">Cast glass with stone. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame"><img src="images/vanity-mirror-1.jpg" alt="Vanity Mirror" style="width:100%;height:100%;object-fit:cover" /></div>
-        <h3>Vanity Mirror</h3>
-        <p class="meta">Polished metal and stone. Edition.</p>
+        <div class="frame"><img src="images/encrusted-closed-cuff-1.jpg" alt="Ore I" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Ore I</h3>
+        <p class="meta">Closed cuff. Patinated metal encrusted with pyrite. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame"><img src="images/encrusted-closed-cuff-1.jpg" alt="Encrusted Closed Cuff" style="width:100%;height:100%;object-fit:cover" /></div>
-        <h3>Encrusted Closed Cuff</h3>
-        <p class="meta">Patinated metal encrusted with pyrite. Edition.</p>
-      </article>
-      <article class="work">
-        <div class="frame"><img src="images/encrusted-open-cuff-1.jpg" alt="Encrusted Open Cuff" style="width:100%;height:100%;object-fit:cover" /></div>
-        <h3>Encrusted Open Cuff</h3>
-        <p class="meta">Patinated metal encrusted with pyrite. Edition.</p>
+        <div class="frame"><img src="images/encrusted-open-cuff-1.jpg" alt="Ore II" style="width:100%;height:100%;object-fit:cover" /></div>
+        <h3>Ore II</h3>
+        <p class="meta">Open cuff. Patinated metal encrusted with pyrite. Edition.</p>
       </article>
     </div>
     <p style="margin-top:40px;max-width:52ch;color:#6a6258;font-size:15px">From the Sky and Stone collection. More works added as the catalogue grows.</p>
   </div>
 </section>
 
-<section class="works mirrors" id="mirrors" style="padding-top:0">
+<section class="mirror-band" id="mirrors">
+  <div class="mirror-band-bg"></div>
   <div class="wrap">
     <span class="cap">Sky and Stone — Mirrors</span>
-    <p style="max-width:54ch;margin:18px 0 46px;font-size:18px;color:#2a2a2a">Polished mirror raised on raw mineral: sky caught and held in metal, anchored to stone. Each piece pairs a reflective form with a single material — calcite, selenite, obsidian, pyrite, sapphire.</p>
+    <h2>Sky, held</h2>
+    <p>Polished mirror raised on raw mineral: sky caught and held in metal, anchored to stone. Each piece pairs a reflective form with a single material — calcite, selenite, obsidian, pyrite, sapphire.</p>
+  </div>
+</section>
+
+<section class="works mirrors" style="padding-top:90px">
+  <div class="wrap">
     <div class="row">
       <article class="work">
-        <div class="frame" style="background:#050608"><img src="images/pyrite-pair.jpg" alt="Pyrite Pair mirror" style="width:100%;height:100%;object-fit:contain" /></div>
-        <h3>Pyrite Pair</h3>
+        <div class="frame" style="background:#050608"><img src="images/pyrite-pair.jpg" alt="Dyad in Pyrite" style="width:100%;height:100%;object-fit:contain" /></div>
+        <h3>Dyad in Pyrite</h3>
         <p class="meta">Polished mirror on pyrite. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame" style="background:#050608"><img src="images/obsidian.jpg" alt="Obsidian mirror" style="width:100%;height:100%;object-fit:contain" /></div>
-        <h3>Obsidian</h3>
+        <div class="frame" style="background:#050608"><img src="images/obsidian.jpg" alt="Scry" style="width:100%;height:100%;object-fit:contain" /></div>
+        <h3>Scry</h3>
         <p class="meta">Polished mirror on raw obsidian. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame" style="background:#050608"><img src="images/sapphire.jpg" alt="Sapphire mirror" style="width:100%;height:100%;object-fit:contain" /></div>
-        <h3>Sapphire</h3>
+        <div class="frame" style="background:#050608"><img src="images/sapphire.jpg" alt="Reflecting Pool" style="width:100%;height:100%;object-fit:contain" /></div>
+        <h3>Reflecting Pool</h3>
         <p class="meta">Polished mirror on raw sapphire. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame" style="background:#050608"><img src="images/selenite.jpg" alt="Selenite mirrors" style="width:100%;height:100%;object-fit:contain" /></div>
-        <h3>Selenite</h3>
+        <div class="frame" style="background:#050608"><img src="images/selenite.jpg" alt="Selene" style="width:100%;height:100%;object-fit:contain" /></div>
+        <h3>Selene</h3>
         <p class="meta">Mirror pair on selenite. Edition.</p>
       </article>
       <article class="work">
-        <div class="frame" style="background:#050608"><img src="images/floor-mirror.jpg" alt="Floor Mirror on calcite" style="width:100%;height:100%;object-fit:contain" /></div>
-        <h3>Floor Mirror</h3>
+        <div class="frame" style="background:#050608"><img src="images/floor-mirror.jpg" alt="Mirage" style="width:100%;height:100%;object-fit:contain" /></div>
+        <h3>Mirage</h3>
         <p class="meta">Floor mirror on calcite. Edition.</p>
       </article>
     </div>
