@@ -68,6 +68,9 @@
   .feature .frame img{width:100%;height:100%;object-fit:cover}
   .feature h3{font-size:26px;margin-top:26px}
   .feature .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#6a6258;margin-top:8px}
+  .feature .wide{aspect-ratio:16/9;background:#050608;overflow:hidden}
+  .feature .wide img{width:100%;height:100%;object-fit:cover}
+  .feature .piece + .piece{margin-top:64px}
   @media(max-width:860px){.feature .grid2{grid-template-columns:1fr;gap:20px}}
 
   /* mirror band (full-bleed sky-reflecting background) */
@@ -240,13 +243,22 @@
 
 <section class="feature" id="furniture">
   <div class="wrap">
-    <span class="cap">Furniture</span>
-    <div class="grid2" style="margin-top:28px">
-      <div class="frame"><img src="images/altar-table-1.jpg" alt="Altar Table, selenite and bronze" /></div>
-      <div class="frame"><img src="images/altar-table-2.jpg" alt="Altar Table, selenite and bronze" /></div>
+    <span class="cap">Furniture — Altar Tables</span>
+
+    <div class="piece" style="margin-top:28px">
+      <div class="grid2">
+        <div class="frame"><img src="images/altar-table-1.jpg" alt="Mesa altar table, selenite and bronze" /></div>
+        <div class="frame"><img src="images/altar-table-2.jpg" alt="Mesa altar table, selenite and bronze" /></div>
+      </div>
+      <h3>Mesa</h3>
+      <p class="meta">Altar table. Selenite and bronze. One of a kind.</p>
     </div>
-    <h3>Altar Table</h3>
-    <p class="meta">Selenite and bronze. One of a kind.</p>
+
+    <div class="piece">
+      <div class="wide"><img src="images/altar-dolmen-1.jpg" alt="Dolmen altar table, selenite and bronze" /></div>
+      <h3>Dolmen</h3>
+      <p class="meta">Altar table, second design. Selenite and bronze. One of a kind.</p>
+    </div>
   </div>
 </section>
 
