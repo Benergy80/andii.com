@@ -29,6 +29,14 @@
   nav .mark{font-family:var(--serif);font-size:22px;letter-spacing:0.32em;padding-left:0.32em}
   nav .links{display:flex;gap:34px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase}
   nav .links a{opacity:.85}nav .links a:hover{opacity:1}
+  .nav-toggle{display:none;background:none;border:0;color:inherit;cursor:pointer;
+     font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:6px 2px}
+  .nav-overlay{position:fixed;inset:0;z-index:45;background:rgba(5,6,8,.975);
+     display:none;flex-direction:column;justify-content:center;align-items:center;gap:26px;padding:24px}
+  .nav-overlay a{font-family:var(--serif);font-size:30px;font-weight:300;color:var(--bone);letter-spacing:.01em}
+  .nav-overlay a:hover{color:var(--glass)}
+  .nav-overlay.open{display:flex}
+  body.nav-open{overflow:hidden}
 
   /* hero */
   .hero{height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;
@@ -71,7 +79,7 @@
   .feature .wide{aspect-ratio:16/9;background:#050608;overflow:hidden}
   .feature .wide img{width:100%;height:100%;object-fit:cover}
   .feature .piece + .piece{margin-top:64px}
-  @media(max-width:860px){.feature .grid2{grid-template-columns:1fr;gap:20px}}
+  @media (max-width:860px){.feature .grid2{grid-template-columns:1fr;gap:20px}}
 
   /* mirror band (full-bleed sky-reflecting background) */
   .mirror-band{position:relative;min-height:78vh;display:flex;align-items:flex-end;
@@ -115,7 +123,7 @@
   .minerals .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 44px;margin-top:64px}
   .minerals .m h4{font-family:var(--serif);font-weight:300;font-size:25px;color:var(--bone);letter-spacing:-0.01em}
   .minerals .m p{margin-top:12px;color:#aeb3b0;font-size:15px;line-height:1.65;max-width:34ch}
-  @media(max-width:860px){.minerals .mgrid{grid-template-columns:1fr;gap:30px}}
+  @media (max-width:860px){.minerals .mgrid{grid-template-columns:1fr;gap:30px}}
 
   /* materials (dark, two columns) */
   .materials{background:var(--night);color:var(--bone)}
@@ -157,16 +165,16 @@
   .inquire .orline{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:#aeb3b0}
   .inquire .orline a{border-bottom:1px solid var(--bronze);color:var(--bone)}
   .contact .ok{font-family:var(--serif);font-size:22px;color:var(--glass)}
-  @media(max-width:860px){.contact .row2{flex-direction:column}}
+  @media (max-width:860px){.contact .row2{flex-direction:column}}
 
   footer{background:var(--night);color:var(--moon);padding:70px 0}
   footer .grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
   footer .mk{font-family:var(--serif);font-size:30px;letter-spacing:.3em;color:var(--bone)}
   footer .small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#8b8f8a;line-height:2}
 
-  @media(max-width:860px){
+  @media (max-width:860px){
     section{padding:96px 0}.wrap{padding:0 24px}
-    nav{padding:18px 24px}.nav-links-hide{display:none}
+    nav{padding:18px 24px}nav .links{display:none}.nav-toggle{display:block}
     .collection .grid,.studio .grid,.materials .grid,.works .row{grid-template-columns:1fr;gap:40px}
     .materials .col+.col{border-left:0;border-top:1px solid #20242a}
     .hero .topcap{left:24px}
@@ -183,7 +191,16 @@
     <a href="#studio">Studio</a>
     <a href="#inquire">Inquire</a>
   </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
 </nav>
+<div class="nav-overlay" id="navOverlay">
+  <a href="#collection">Collection</a>
+  <a href="#furniture">Furniture</a>
+  <a href="#mirrors">Mirrors</a>
+  <a href="#works">Objects</a>
+  <a href="#studio">Studio</a>
+  <a href="#inquire">Inquire</a>
+</div>
 
 <header class="hero">
   <div class="hero-bg"></div>
@@ -450,6 +467,22 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var t=document.querySelector('.nav-toggle');
+    var ov=document.getElementById('navOverlay');
+    if(!t||!ov)return;
+    function close(){ov.classList.remove('open');document.body.classList.remove('nav-open');t.textContent='Menu';t.setAttribute('aria-expanded','false');}
+    t.addEventListener('click',function(){
+      var open=ov.classList.toggle('open');
+      document.body.classList.toggle('nav-open',open);
+      t.textContent=open?'Close':'Menu';
+      t.setAttribute('aria-expanded',open?'true':'false');
+    });
+    ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  })();
+</script>
 
 </body>
 </html>
