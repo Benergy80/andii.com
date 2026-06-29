@@ -66,9 +66,18 @@
   .mirror-band{position:relative;min-height:78vh;display:flex;align-items:flex-end;
      padding:0 0 9vh;overflow:hidden;color:var(--bone)}
   .mirror-band-bg{position:absolute;inset:0;z-index:-1;
-     background:#050608 url('images/group-mirrors.jpg') center 34%/cover no-repeat;}
+     background:#050608 url('images/selenite.jpg') center 38%/cover no-repeat;}
   .mirror-band-bg:after{content:"";position:absolute;inset:0;
-     background:linear-gradient(180deg, rgba(5,6,8,.42) 0%, rgba(5,6,8,.12) 30%, rgba(5,6,8,.88) 100%);}
+     background:linear-gradient(180deg, rgba(5,6,8,.30) 0%, rgba(5,6,8,0) 32%, rgba(5,6,8,.82) 100%);}
+
+  /* series band (group shot, lower on the page) */
+  .series-band{position:relative;min-height:64vh;display:flex;align-items:flex-end;
+     padding:0 0 6vh;overflow:hidden;color:var(--bone);background:#050608}
+  .series-band-bg{position:absolute;inset:0;z-index:-1;
+     background:#050608 url('images/group-mirrors.jpg') center/cover no-repeat;}
+  .series-band-bg:after{content:"";position:absolute;inset:0;
+     background:linear-gradient(180deg, rgba(5,6,8,.18) 0%, rgba(5,6,8,0) 42%, rgba(5,6,8,.72) 100%);}
+  .series-band .cap{color:var(--glass)}
   .mirror-band .cap{color:var(--glass)}
   .mirror-band h2{font-size:clamp(40px,7vw,92px);color:var(--bone);margin-top:14px;letter-spacing:-0.01em}
   .mirror-band p{max-width:54ch;margin-top:22px;color:#e6e4dd;font-size:18px}
@@ -259,6 +268,13 @@
         <p class="meta">Floor mirror on calcite. Edition.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="series-band">
+  <div class="series-band-bg"></div>
+  <div class="wrap">
+    <span class="cap">One of a kind, produced in series</span>
   </div>
 </section>
 
