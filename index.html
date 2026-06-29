@@ -136,27 +136,27 @@
   .studio h3 a.maker-link:hover{border-bottom-color:var(--bronze)}
   .statement a{border-bottom:1px solid var(--bronze)}
 
-  /* inquire */
-  .inquire{text-align:center;padding:160px 0}
-  .inquire h2{font-size:clamp(40px,7vw,92px)}
-  .inquire .lede{max-width:48ch;margin:28px auto 0;font-size:18px;color:#2a2a2a}
-  .inquire .lines{margin-top:48px;display:flex;flex-direction:column;gap:10px;align-items:center;font-size:17px}
+  /* inquire (dark) */
+  .inquire{text-align:center;padding:160px 0;background:var(--night);color:var(--bone)}
+  .inquire .cap{color:var(--glass)}
+  .inquire h2{font-size:clamp(40px,7vw,92px);color:var(--bone)}
+  .inquire .lede{max-width:48ch;margin:28px auto 0;font-size:18px;color:#cfd2cf}
   .inquire a{border-bottom:1px solid var(--bronze);padding-bottom:2px}
   .contact{max-width:560px;margin:46px auto 0;text-align:left;display:flex;flex-direction:column;gap:16px}
   .contact .row2{display:flex;gap:16px}
   .contact .row2>*{flex:1}
-  .contact input,.contact textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--moon);
-     padding:12px 2px;font-family:var(--sans);font-size:16px;color:var(--basalt);font-weight:300}
-  .contact input:focus,.contact textarea:focus{outline:0;border-bottom-color:var(--bronze)}
+  .contact input,.contact textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(216,213,204,.28);
+     padding:12px 2px;font-family:var(--sans);font-size:16px;color:var(--bone);font-weight:300}
+  .contact input:focus,.contact textarea:focus{outline:0;border-bottom-color:var(--glass)}
   .contact textarea{resize:vertical;min-height:120px}
-  .contact ::placeholder{color:#9a948a;opacity:1}
-  .contact button{margin-top:10px;align-self:flex-start;background:var(--night);color:var(--bone);border:0;
-     font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 34px;cursor:pointer;transition:background .2s}
-  .contact button:hover{background:var(--bronze)}
+  .contact ::placeholder{color:#8b8f8a;opacity:1}
+  .contact button{margin-top:10px;align-self:flex-start;background:var(--bone);color:var(--night);border:0;
+     font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 34px;cursor:pointer;transition:background .2s,color .2s}
+  .contact button:hover{background:var(--glass)}
   .contact button:disabled{opacity:.5;cursor:default}
-  .inquire .orline{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:#6a6258}
-  .inquire .orline a{border-bottom:1px solid var(--bronze)}
-  .contact .ok{font-family:var(--serif);font-size:22px;color:var(--bronze)}
+  .inquire .orline{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:#aeb3b0}
+  .inquire .orline a{border-bottom:1px solid var(--bronze);color:var(--bone)}
+  .contact .ok{font-family:var(--serif);font-size:22px;color:var(--glass)}
   @media(max-width:860px){.contact .row2{flex-direction:column}}
 
   footer{background:var(--night);color:var(--moon);padding:70px 0}
@@ -387,27 +387,6 @@
     </div>
   </div>
 </section>
-
-<section class="materials">
-  <div class="wrap">
-    <span class="cap" style="color:var(--glass);display:block;margin-bottom:18px">Two material languages</span>
-    <p style="max-width:54ch;color:#cfd2cf;font-size:18px;margin-bottom:46px">Cast glass and metal both remember transformation. They begin as heat, become fluid, take the shape of a mold, and return to solidity carrying every decision made along the way.</p>
-    <div class="grid">
-      <div class="col">
-        <div class="who">Glass — Ally Reza</div>
-        <h3>Cast glass</h3>
-        <p>Kiln-cast, slumped, and polished. Glass as light made solid: clarity, color held in the body, the cool reference to sky.</p>
-      </div>
-      <div class="col">
-        <div class="who">Metal — Ben Stagl</div>
-        <h3>Cast &amp; fabricated metal</h3>
-        <p>Bronze, aluminum, and steel, cast and worked, darkened and patinated. Metal as weight and ground: shadow, reflection, the held stone.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
 
 <section class="inquire" id="inquire">
   <div class="wrap">
