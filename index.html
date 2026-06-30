@@ -471,7 +471,11 @@
 <script>
   (function(){
     var mark=document.querySelector('.mark');
-    if(mark){mark.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});}
+    if(mark){mark.addEventListener('click',function(e){
+      e.preventDefault();
+      window.scrollTo({top:0,behavior:'smooth'});
+      if(window.history&&history.replaceState){history.replaceState(null,'',window.location.pathname+window.location.search);}
+    });}
     var t=document.querySelector('.nav-toggle');
     var ov=document.getElementById('navOverlay');
     if(!t||!ov)return;
