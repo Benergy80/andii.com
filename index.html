@@ -126,6 +126,9 @@
                linear-gradient(180deg,transparent,#000 var(--e,7%),#000 calc(100% - var(--e,7%) * 2),transparent);
     mask-composite:intersect}
   .edge.wide-e img{--e:12%}
+  /* round pieces float free of their photo backdrop */
+  .disc img{-webkit-mask-image:radial-gradient(circle closest-side at 49.9% 49.9%,#000 82.2%,transparent 83.4%);
+                    mask-image:radial-gradient(circle closest-side at 49.9% 49.9%,#000 82.2%,transparent 83.4%)}
 
   .bleed img{width:100%;aspect-ratio:2.4/1;object-fit:cover;object-position:50% 56%}
   .bleed figcaption{padding:0 var(--pad)}
@@ -429,7 +432,21 @@
         <figcaption><h3>Ore I</h3><span class="m">Closed cuff, encrusted with pyrite</span></figcaption>
       </figure>
     </a>
-    <a class="piece edge wide-e rv" id="ore-ii" href="#ore-ii" style="--c:2/6" data-title="Ore II" data-kind="Open cuff"
+    <a class="piece disc rv" id="annular" href="#annular" style="--c:2/7" data-title="Annular" data-kind="Wall sconce"
+       data-material="" data-dims="30 in. diameter × 3 in. deep" data-year="2019" data-nfs="1" data-images="annular.jpg">
+      <figure>
+        <div class="ph"><img src="images/annular.jpg" srcset="images/w900/annular.jpg 900w, images/annular.jpg 1400w" sizes="(max-width:820px) 75vw, 40vw" alt="Annular, a round wall sconce glowing at its center like an eclipse" width="1400" height="1400" loading="lazy" decoding="async" /></div>
+        <figcaption><h3>Annular</h3><span class="m">Wall sconce · NFS</span></figcaption>
+      </figure>
+    </a>
+    <a class="piece edge wide-e rv" id="dyad-in-glass" href="#dyad-in-glass" style="--c:8/12;--t:16vh" data-title="Dyad in Glass" data-kind="Pyramid pair, with stone"
+       data-material="" data-images="pyramid-pair-1.jpg,pyramid-pair-2.jpg">
+      <figure>
+        <div class="ph"><img src="images/pyramid-pair-1.jpg" srcset="images/w900/pyramid-pair-1.jpg 900w, images/pyramid-pair-1.jpg 1150w" sizes="(max-width:820px) 75vw, 40vw" alt="Dyad in Glass, an amber pyramid balanced point-down on a clear one" width="1150" height="1150" loading="lazy" decoding="async" /></div>
+        <figcaption><h3>Dyad in Glass</h3><span class="m">Pyramid pair, with stone</span></figcaption>
+      </figure>
+    </a>
+    <a class="piece edge wide-e rv" id="ore-ii" href="#ore-ii" style="--c:1/5" data-title="Ore II" data-kind="Open cuff"
        data-material="Encrusted with raw pyrite" data-images="encrusted-open-cuff-1.jpg,encrusted-open-cuff-2.jpg,encrusted-open-cuff-3.jpg">
       <figure>
         <div class="ph"><img src="images/encrusted-open-cuff-1.jpg" alt="Ore II, an open cuff encrusted with pyrite" width="892" height="888" loading="lazy" decoding="async" /></div>
@@ -636,6 +653,7 @@
       b.addEventListener('click',function(){show(s,d.title);thumbs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-current',x===b?'true':'false');});});
       thumbs.appendChild(b);
     });}
+    pv.querySelector('.fine').textContent=d.nfs?'Not for sale. Commissions on request.':'Pricing and availability on request.';
     if(!pv.open){pv.showModal();document.body.classList.add('lock');}
     if(history.replaceState)history.replaceState(null,'','#'+p.id);
   }
