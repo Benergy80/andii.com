@@ -142,7 +142,8 @@
   .stones{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(14px,1.6vw,24px);padding:0 var(--pad)}
   .stone img{width:100%;aspect-ratio:4/5;object-fit:cover}
   .stone h3{font-size:clamp(22px,1.9vw,30px);margin-top:18px;letter-spacing:0}
-  .stone p{font-size:14px;line-height:1.55;color:var(--dim);margin-top:10px}
+  .stone p{font-size:14px;line-height:1.55;color:var(--dim);margin-top:8px}
+  .stone .en{font-family:var(--display);font-style:italic;font-size:18px;line-height:1.3;color:var(--bone);margin-top:6px}
   .stone .in{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.7}
   .stone .in a{color:var(--dim);border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
   .stone .in a:hover{color:var(--bone);border-color:var(--dim)}
@@ -457,43 +458,49 @@
 <section id="materials">
   <div class="head">
     <h2 class="rv">Materials</h2>
-    <div class="note rv"><p>The stone is never only a pedestal.</p></div>
+    <div class="note rv"><p>The stone is never only a pedestal. Every material carries its own energy, and we work with it as a participant: to bring balance and intention to the spaces we inhabit.</p></div>
   </div>
   <div class="stones">
     <div class="stone rv">
       <img src="images/materials/selenite.jpg" alt="Raw selenite, close" width="364" height="446" loading="lazy" decoding="async" />
       <h3>Selenite</h3>
-      <p>Lunar, lit from within.</p>
+      <p class="en">Clarity, cleansing</p>
+      <p>Gypsum crystal that carries light through its body.</p>
       <p class="in">In <a href="#cirrus">Cirrus</a>, <a href="#dolmen">Dolmen</a>, <a href="#selene">Selene</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/calcite.jpg" alt="Blue calcite, close" width="560" height="700" loading="lazy" decoding="async" />
       <h3>Calcite</h3>
-      <p>Clouded light made solid.</p>
+      <p class="en">Calm, amplification</p>
+      <p>Calcite splits a single ray of light in two.</p>
       <p class="in">In <a href="#zenith">Zenith</a>, <a href="#mirage">Mirage</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/obsidian.jpg" alt="Raw obsidian, close" width="540" height="675" loading="lazy" decoding="async" />
       <h3>Obsidian</h3>
-      <p>The oldest mirror.</p>
+      <p class="en">Protection, grounding</p>
+      <p>Volcanic glass, polished into some of the first mirrors.</p>
       <p class="in">In <a href="#scry">Scry</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/pyrite.jpg" alt="Raw pyrite, close" width="520" height="650" loading="lazy" decoding="async" />
       <h3>Pyrite</h3>
-      <p>Gold struck from rock.</p>
+      <p class="en">Abundance, will</p>
+      <p>Named for fire: strike it and it sparks.</p>
       <p class="in">In <a href="#dyad-in-pyrite">Dyad in Pyrite</a>, <a href="#weight-of-glimmer">The Weight of Glimmer</a>, <a href="#ore-i">Ore I</a>, <a href="#ore-ii">Ore II</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/sapphire.jpg" alt="Raw sapphire, close" width="400" height="500" loading="lazy" decoding="async" />
       <h3>Sapphire</h3>
-      <p>The weight of night.</p>
+      <p class="en">Wisdom, focus</p>
+      <p>Second only to diamond in hardness.</p>
       <p class="in">In <a href="#reflecting-pool">Reflecting Pool</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/quartz.jpg" alt="Quartz crystal lit from within" width="341" height="426" loading="lazy" decoding="async" />
       <h3>Quartz</h3>
-      <p>Light held in crystal.</p>
+      <p class="en">Intention, harmony</p>
+      <p>It resonates at a fixed frequency; quartz keeps time in our clocks.</p>
       <p class="in">In <a href="#dropshine-i">DropShine I</a>, <a href="#dropshine-ii">II</a>, <a href="#dropshine-iii">III</a>, <a href="#dropshine-drips">Drips</a></p>
     </div>
   </div>
@@ -599,14 +606,16 @@
 
   /* piece view */
   var pv=document.getElementById('pv'), pieces=[].slice.call(document.querySelectorAll('.piece'));
-  var stage=pv.querySelector('.stage img'), thumbs=pv.querySelector('.thumbs'), cur=-1;
+  var stage=pv.querySelector('.stage img'), thumbs=pv.querySelector('.thumbs'), cur=-1, ENERGY={};
+  document.querySelectorAll('.stone').forEach(function(t){ENERGY[t.querySelector('h3').textContent.toLowerCase()]=t.querySelector('.en').textContent;});
   function show(src,alt){stage.src='images/'+src;stage.alt=alt;}
   function open(i){
     cur=(i+pieces.length)%pieces.length;
     var p=pieces[cur], d=p.dataset, imgs=d.images.split(',');
     pv.querySelector('h2').textContent=d.title;
     pv.querySelector('.kicker').textContent=[d.kind,d.collection].filter(Boolean).join(' · ');
-    var rows=[['Material',d.material],['Dimensions',d.dims||'On request'],['Year',d.year],['Edition',d.note]];
+    var en=Object.keys(ENERGY).filter(function(k){return d.material.toLowerCase().indexOf(k)>-1;}).map(function(k){return ENERGY[k];})[0];
+    var rows=[['Material',d.material],['Energy',en],['Dimensions',d.dims||'On request'],['Year',d.year],['Edition',d.note]];
     pv.querySelector('dl').innerHTML=rows.filter(function(r){return r[1];}).map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('');
     show(imgs[0],d.title);
     thumbs.innerHTML='';
