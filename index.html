@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ANDII — Authored Collectible Design</title>
 <meta name="description" content="ANDII is the authored collectible design practice of Ben Stagl and Ally Reza: furniture, mirrors, lighting, and objects built around raw stone and mineral." />
 <meta name="theme-color" content="#000000" />
@@ -91,6 +91,10 @@
   .intro .block{margin-left:clamp(0px,calc((100vw - 2*var(--pad)) * .33),640px)}
   .intro .mk{font-family:var(--display);font-size:24px;letter-spacing:.32em;line-height:1;margin-bottom:22px}
   .intro .block p{font-size:17px;line-height:1.85;color:#C9C4BC}
+  .nw{white-space:nowrap}
+  /* bigger tap areas for small inline links */
+  .stone .in a,.inquire .l p a{position:relative}
+  .stone .in a::after,.inquire .l p a::after{content:"";position:absolute;inset:-13px -3px}
   .head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;
         padding:0 var(--pad);margin-bottom:clamp(56px,9vh,110px)}
   .head h2{grid-column:1/9;font-size:clamp(60px,10vw,168px);letter-spacing:-.025em;line-height:.86}
@@ -268,6 +272,8 @@
     .salon>.piece:nth-child(even){grid-column:2/7}
     .band img{height:70vh}
     .studio{gap:40px}
+    .coda{min-height:0;padding:120px var(--pad) 72px}
+    .stone .en{font-size:16px}
     .makers{grid-template-columns:1fr}
     .inquire{gap:48px}
     .contact .row2{flex-direction:column}
@@ -314,7 +320,7 @@
 <section class="intro">
   <div class="block rv">
     <div class="mk">ANDII</div>
-    <p>Authored collectible design by Ben Stagl + Ally Reza<br>
+    <p>Authored collectible design <span class="nw">by Ben Stagl + Ally&nbsp;Reza</span><br>
        Sky and stone · Chicago, IL<br>
        AND, partnership. II, two authors.</p>
   </div>
@@ -340,7 +346,7 @@
     <a class="piece edge rv" id="dolmen" href="#dolmen" data-title="Dolmen Table" data-kind="Altar table no. 2" data-collection="Sky and Stone"
        data-material="Selenite" data-images="altar-dolmen-1.jpg">
       <figure>
-        <div class="ph"><img src="images/altar-dolmen-1.jpg" alt="Dolmen Table, raw selenite" width="1448" height="1086" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/altar-dolmen-1.jpg" srcset="images/w900/altar-dolmen-1.jpg 900w, images/altar-dolmen-1.jpg 1448w" sizes="(max-width:820px) 75vw, 60vw" alt="Dolmen Table, raw selenite" width="1448" height="1086" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Dolmen Table</h3><span class="m">Altar table no. 2 · Selenite</span></figcaption>
       </figure>
     </a>
@@ -351,49 +357,49 @@
       <h3>Sky, held</h3>
       <p>Polished mirror on raw stone. Each one of a kind, produced in series.</p>
     </div>
-    <figure class="rv"><img src="images/blue-calcite-abstract.jpg" alt="Blue calcite against a polished mirror" width="1682" height="1684" loading="lazy" decoding="async" /></figure>
+    <figure class="rv"><img src="images/blue-calcite-abstract.jpg" srcset="images/w900/blue-calcite-abstract.jpg 900w, images/blue-calcite-abstract.jpg 1682w" sizes="(max-width:820px) 90vw, 38vw" alt="Blue calcite against a polished mirror" width="1682" height="1684" loading="lazy" decoding="async" /></figure>
   </div>
 
   <div class="salon">
     <a class="piece edge wide-e rv" id="mirage" href="#mirage" style="--c:1/7" data-title="Mirage" data-kind="Floor mirror" data-collection="Sky and Stone"
        data-material="Polished mirror on calcite" data-note="One of a kind, produced in series." data-images="floor-mirror.jpg">
       <figure>
-        <div class="ph"><img src="images/floor-mirror.jpg" alt="Mirage, a tall floor mirror on calcite" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/floor-mirror.jpg" srcset="images/w900/floor-mirror.jpg 900w, images/floor-mirror.jpg 1122w" sizes="(max-width:820px) 75vw, 40vw" alt="Mirage, a tall floor mirror on calcite" width="1122" height="1402" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Mirage</h3><span class="m">Floor mirror on calcite</span></figcaption>
       </figure>
     </a>
     <a class="piece edge rv" id="zenith" href="#zenith" style="--c:8/12;--t:22vh" data-title="Zenith" data-kind="Mirror" data-collection="Sky and Stone"
        data-material="Polished mirror on blue calcite" data-dims="12 × 10 × 6 in." data-year="2026" data-note="One of a kind, produced in series." data-images="blue-calcite.jpg">
       <figure>
-        <div class="ph"><img src="images/blue-calcite.jpg" alt="Zenith, a round mirror on blue calcite" width="1086" height="1448" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/blue-calcite.jpg" srcset="images/w900/blue-calcite.jpg 900w, images/blue-calcite.jpg 1086w" sizes="(max-width:820px) 75vw, 40vw" alt="Zenith, a round mirror on blue calcite" width="1086" height="1448" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Zenith</h3><span class="m">Mirror on blue calcite</span></figcaption>
       </figure>
     </a>
     <a class="piece edge rv" id="scry" href="#scry" style="--c:2/5" data-title="Scry" data-kind="Mirror" data-collection="Sky and Stone"
        data-material="Polished mirror on raw obsidian" data-note="One of a kind, produced in series." data-images="obsidian.jpg">
       <figure>
-        <div class="ph"><img src="images/obsidian.jpg" alt="Scry, a mirror on raw obsidian" width="1086" height="1448" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/obsidian.jpg" srcset="images/w900/obsidian.jpg 900w, images/obsidian.jpg 1086w" sizes="(max-width:820px) 75vw, 40vw" alt="Scry, a mirror on raw obsidian" width="1086" height="1448" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Scry</h3><span class="m">Mirror on raw obsidian</span></figcaption>
       </figure>
     </a>
     <a class="piece edge rv" id="reflecting-pool" href="#reflecting-pool" style="--c:6/10;--t:14vh" data-title="Reflecting Pool" data-kind="Mirror" data-collection="Sky and Stone"
        data-material="Polished mirror on raw sapphire" data-note="One of a kind, produced in series." data-images="sapphire.jpg">
       <figure>
-        <div class="ph"><img src="images/sapphire.jpg" alt="Reflecting Pool, a mirror on raw sapphire" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/sapphire.jpg" srcset="images/w900/sapphire.jpg 900w, images/sapphire.jpg 1122w" sizes="(max-width:820px) 75vw, 40vw" alt="Reflecting Pool, a mirror on raw sapphire" width="1122" height="1402" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Reflecting Pool</h3><span class="m">Mirror on raw sapphire</span></figcaption>
       </figure>
     </a>
     <a class="piece edge rv" id="dyad-in-pyrite" href="#dyad-in-pyrite" style="--c:10/13;--t:30vh" data-title="Dyad in Pyrite" data-kind="Mirror" data-collection="Sky and Stone"
        data-material="Polished mirror on pyrite" data-note="One of a kind, produced in series." data-images="pyrite-pair.jpg">
       <figure>
-        <div class="ph"><img src="images/pyrite-pair.jpg" alt="Dyad in Pyrite, a mirror on pyrite cubes" width="1086" height="1448" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/pyrite-pair.jpg" srcset="images/w900/pyrite-pair.jpg 900w, images/pyrite-pair.jpg 1086w" sizes="(max-width:820px) 75vw, 40vw" alt="Dyad in Pyrite, a mirror on pyrite cubes" width="1086" height="1448" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Dyad in Pyrite</h3><span class="m">Mirror on pyrite</span></figcaption>
       </figure>
     </a>
     <a class="piece edge rv" id="selene" href="#selene" style="--c:3/11" data-title="Selene" data-kind="Mirror pair" data-collection="Sky and Stone"
        data-material="Polished mirrors on selenite" data-note="One of a kind, produced in series." data-images="selenite.jpg">
       <figure>
-        <div class="ph"><img src="images/selenite.jpg" alt="Selene, a pair of round mirrors on selenite" width="1448" height="1086" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/selenite.jpg" srcset="images/w900/selenite.jpg 900w, images/selenite.jpg 1448w" sizes="(max-width:820px) 75vw, 40vw" alt="Selene, a pair of round mirrors on selenite" width="1448" height="1086" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Selene</h3><span class="m">Mirror pair on selenite</span></figcaption>
       </figure>
     </a>
@@ -412,14 +418,14 @@
     <a class="piece edge rv" id="weight-of-glimmer" href="#weight-of-glimmer" style="--c:1/8" data-title="The Weight of Glimmer" data-kind="Sculpture"
        data-material="Raw pyrite" data-images="skygem-3.jpg,skygem-2.jpg,skygem-closeup.jpg">
       <figure>
-        <div class="ph"><img src="images/skygem-3.jpg" alt="The Weight of Glimmer, seamed with raw pyrite" width="1476" height="1476" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/skygem-3.jpg" srcset="images/w900/skygem-3.jpg 900w, images/skygem-3.jpg 1476w" sizes="(max-width:820px) 75vw, 40vw" alt="The Weight of Glimmer, seamed with raw pyrite" width="1476" height="1476" loading="lazy" decoding="async" /></div>
         <figcaption><h3>The Weight of Glimmer</h3><span class="m">Sculpture with raw pyrite</span></figcaption>
       </figure>
     </a>
     <a class="piece edge wide-e rv" id="ore-i" href="#ore-i" style="--c:9/13;--t:18vh" data-title="Ore I" data-kind="Closed cuff"
        data-material="Encrusted with raw pyrite" data-images="encrusted-closed-cuff-1.jpg,encrusted-closed-cuff-2.jpg">
       <figure>
-        <div class="ph"><img src="images/encrusted-closed-cuff-1.jpg" alt="Ore I, a closed cuff encrusted with pyrite" width="1248" height="1130" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/encrusted-closed-cuff-1.jpg" srcset="images/w900/encrusted-closed-cuff-1.jpg 900w, images/encrusted-closed-cuff-1.jpg 1248w" sizes="(max-width:820px) 75vw, 40vw" alt="Ore I, a closed cuff encrusted with pyrite" width="1248" height="1130" loading="lazy" decoding="async" /></div>
         <figcaption><h3>Ore I</h3><span class="m">Closed cuff, encrusted with pyrite</span></figcaption>
       </figure>
     </a>
@@ -433,28 +439,28 @@
     <a class="piece edge wide-e rv" id="dropshine-i" href="#dropshine-i" style="--c:7/10;--t:12vh" data-title="DropShine I" data-kind="Pendant light"
        data-material="Quartz crystal" data-images="drop-shine-1.jpg">
       <figure>
-        <div class="ph"><img src="images/drop-shine-1.jpg" alt="DropShine I, a pendant light with a quartz crystal" width="1024" height="1536" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/drop-shine-1.jpg" srcset="images/w900/drop-shine-1.jpg 900w, images/drop-shine-1.jpg 1024w" sizes="(max-width:820px) 75vw, 40vw" alt="DropShine I, a pendant light with a quartz crystal" width="1024" height="1536" loading="lazy" decoding="async" /></div>
         <figcaption><h3>DropShine I</h3><span class="m">Pendant light, quartz crystal</span></figcaption>
       </figure>
     </a>
     <a class="piece edge wide-e rv" id="dropshine-drips" href="#dropshine-drips" style="--c:10/13;--t:34vh" data-title="DropShine Drips" data-kind="Pendant necklaces"
        data-material="Quartz crystal" data-images="drop-shine-drips.jpg">
       <figure>
-        <div class="ph"><img src="images/drop-shine-drips.jpg" alt="DropShine Drips, two pendant necklaces with quartz crystals" width="1254" height="1254" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/drop-shine-drips.jpg" srcset="images/w900/drop-shine-drips.jpg 900w, images/drop-shine-drips.jpg 1254w" sizes="(max-width:820px) 75vw, 40vw" alt="DropShine Drips, two pendant necklaces with quartz crystals" width="1254" height="1254" loading="lazy" decoding="async" /></div>
         <figcaption><h3>DropShine Drips</h3><span class="m">Pendant necklaces, quartz crystal</span></figcaption>
       </figure>
     </a>
     <a class="piece edge wide-e rv" id="dropshine-ii" href="#dropshine-ii" style="--c:3/7" data-title="DropShine II" data-kind="Pendant light"
        data-material="Quartz crystal" data-images="drop-shine-2.jpg">
       <figure>
-        <div class="ph"><img src="images/drop-shine-2.jpg" alt="DropShine II, a pendant light with twin quartz crystals" width="1254" height="1254" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/drop-shine-2.jpg" srcset="images/w900/drop-shine-2.jpg 900w, images/drop-shine-2.jpg 1254w" sizes="(max-width:820px) 75vw, 40vw" alt="DropShine II, a pendant light with twin quartz crystals" width="1254" height="1254" loading="lazy" decoding="async" /></div>
         <figcaption><h3>DropShine II</h3><span class="m">Pendant light, quartz crystal</span></figcaption>
       </figure>
     </a>
     <a class="piece edge wide-e rv" id="dropshine-iii" href="#dropshine-iii" style="--c:8/12;--t:14vh" data-title="DropShine III" data-kind="Pendant light"
        data-material="Quartz crystal" data-images="drop-shine-3.jpg">
       <figure>
-        <div class="ph"><img src="images/drop-shine-3.jpg" alt="DropShine III, a pendant light with a quartz crystal" width="1254" height="1254" loading="lazy" decoding="async" /></div>
+        <div class="ph"><img src="images/drop-shine-3.jpg" srcset="images/w900/drop-shine-3.jpg 900w, images/drop-shine-3.jpg 1254w" sizes="(max-width:820px) 75vw, 40vw" alt="DropShine III, a pendant light with a quartz crystal" width="1254" height="1254" loading="lazy" decoding="async" /></div>
         <figcaption><h3>DropShine III</h3><span class="m">Pendant light, quartz crystal</span></figcaption>
       </figure>
     </a>
@@ -507,7 +513,7 @@
       <h3>Quartz</h3>
       <p class="en">Intention, harmony</p>
       <p>It resonates at a fixed frequency; quartz keeps time in our clocks.</p>
-      <p class="in">In <a href="#dropshine-i">DropShine I</a>, <a href="#dropshine-ii">II</a>, <a href="#dropshine-iii">III</a>, <a href="#dropshine-drips">Drips</a></p>
+      <p class="in">In <a href="#dropshine-i">DropShine I–III</a>, <a href="#dropshine-drips">Drips</a></p>
     </div>
   </div>
 </section>
@@ -518,7 +524,7 @@
   </div>
   <div class="studio">
     <figure class="img rv">
-      <img src="images/vanity-mirror-maquettes.jpg" alt="Mirror maquettes on raw stone in the studio" width="1256" height="1684" loading="lazy" decoding="async" />
+      <img src="images/vanity-mirror-maquettes.jpg" srcset="images/w900/vanity-mirror-maquettes.jpg 900w, images/vanity-mirror-maquettes.jpg 1256w" sizes="(max-width:820px) 90vw, 38vw" alt="Mirror maquettes on raw stone in the studio" width="1256" height="1684" loading="lazy" decoding="async" />
       <figcaption>Mirror maquettes in the studio.</figcaption>
     </figure>
     <div class="txt rv">
