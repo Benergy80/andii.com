@@ -7,6 +7,7 @@
 <meta name="description" content="ANDII is the authored collectible design practice of Ben Stagl and Ally Reza: furniture, mirrors, lighting, and objects built around raw stone and mineral." />
 <meta name="theme-color" content="#000000" />
 <link rel="canonical" href="https://andii.com" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='47' font-family='Didot,Bodoni 72,serif' font-size='42' fill='%23ECE7DF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="ANDII" />
@@ -44,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#000; --bone:#ECE7DF; --dim:#9A958D; --faint:#64605A; --line:rgba(236,231,223,.14);
+    --ink:#000; --bone:#ECE7DF; --dim:#9A958D; --faint:#7D7870; --line:rgba(236,231,223,.14);
     --display:"Bodoni Moda","Bodoni 72",Didot,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
     --pad:clamp(20px,4vw,56px); --ease:cubic-bezier(.2,.7,.2,1);
   }
@@ -67,7 +68,7 @@
   .top .links{display:flex;gap:32px;font-size:13px;letter-spacing:.06em}
   .top .links a{color:var(--dim);transition:color .25s}
   .top .links a:hover{color:var(--bone)}
-  .menu-btn{display:none;background:none;border:0;color:var(--bone);font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer;padding:6px 0}
+  .menu-btn{display:none;background:none;border:0;color:var(--bone);font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer;padding:12px 0}
   .overlay{position:fixed;inset:0;z-index:35;background:#000;display:none;flex-direction:column;justify-content:center;
            padding:0 var(--pad);gap:6px}
   .overlay a{font-family:var(--display);font-size:clamp(44px,12vw,72px);line-height:1.15}
@@ -89,7 +90,7 @@
 
   /* type blocks */
   .intro{padding:clamp(120px,18vh,220px) var(--pad) clamp(100px,14vh,180px)}
-  .intro p{font-family:var(--display);font-size:clamp(30px,3.7vw,58px);line-height:1.1;max-width:21ch;
+  .intro p{font-family:var(--display);font-size:clamp(44px,6.4vw,112px);line-height:1;letter-spacing:-.02em;max-width:12ch;
            margin-left:clamp(0px,calc((100vw - 2*var(--pad)) * .33),640px)}
   .head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;
         padding:0 var(--pad);margin-bottom:clamp(56px,9vh,110px)}
@@ -107,7 +108,8 @@
   /* pieces */
   .piece{display:block;cursor:zoom-in;outline-offset:6px}
   .piece .ph{overflow:hidden}
-  .piece img{width:100%;transition:transform 1.4s var(--ease),opacity .6s}
+  .piece img{width:100%;transition:transform 1.4s var(--ease),filter .8s ease}
+  @media (hover:hover){.piece img{filter:brightness(.9)}.piece:hover img{filter:none}}
   .piece:hover img{transform:scale(1.018)}
   .piece figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-top:16px}
   .piece h3{font-size:clamp(21px,1.8vw,27px);letter-spacing:0}
@@ -156,6 +158,12 @@
   .studio .txt>p{color:#C9C4BC;max-width:50ch}
   .studio .txt>p+p{margin-top:20px}
   .studio .txt a{border-bottom:1px solid var(--faint)}
+  .studio .txt b{font-weight:500;color:var(--bone)}
+  .studio .txt>.lead{font-family:var(--display);font-size:clamp(28px,2.6vw,42px);line-height:1.12;color:var(--bone);max-width:18ch}
+  .studio .txt>.lead+p{margin-top:24px}
+  .coda{min-height:88vh;display:flex;align-items:center;padding:clamp(120px,16vh,200px) var(--pad)}
+  .coda p{font-family:var(--display);font-size:clamp(48px,8.4vw,150px);line-height:.95;letter-spacing:-.025em;max-width:11ch;margin-left:auto;text-align:right}
+  .inquire{padding-top:clamp(40px,6vh,80px)!important}
   .makers{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
   .makers h3{font-size:clamp(26px,2.2vw,34px);letter-spacing:0}
   .makers h3 a{border-bottom:1px solid var(--line);transition:border-color .2s}
@@ -167,8 +175,8 @@
   .inquire{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;
            padding:clamp(140px,19vh,220px) var(--pad) clamp(90px,14vh,160px)}
   .inquire .l{grid-column:1/7}
-  .inquire h2{font-size:clamp(60px,10vw,168px);letter-spacing:-.025em;line-height:.86}
-  .inquire .l p{color:var(--dim);margin-top:48px;max-width:40ch}
+  .inquire h2{font-size:clamp(48px,5.6vw,92px);letter-spacing:-.02em;line-height:.9}
+  .inquire .l p{color:var(--dim);margin-top:28px;max-width:40ch}
   .inquire .l p a{color:var(--bone);border-bottom:1px solid var(--faint)}
   .contact{grid-column:8/13;display:flex;flex-direction:column;gap:14px}
   .contact .row2{display:flex;gap:14px}
@@ -191,6 +199,13 @@
   footer .mk{font-family:var(--display);font-size:26px;letter-spacing:.32em;color:var(--bone);line-height:1}
   footer a{color:var(--dim);border-bottom:1px solid var(--line)}
 
+  /* view cursor */
+  .cursor{position:fixed;left:0;top:0;z-index:30;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;
+          background:rgba(236,231,223,.92);color:#000;display:flex;align-items:center;justify-content:center;
+          font-size:12.5px;letter-spacing:.08em;pointer-events:none;opacity:0;transform:scale(.4);
+          transition:opacity .3s ease,transform .4s var(--ease)}
+  .cursor.on{opacity:1;transform:scale(1)}
+  @media (hover:none),(pointer:coarse){.cursor{display:none}}
   /* piece view */
   .pv{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;border:0;padding:0;
       background:#000;color:var(--bone);overflow:hidden}
@@ -297,7 +312,7 @@
 </header>
 
 <section class="intro">
-  <p class="rv">A Chicago studio merging material craft with digital fabrication in work that feels at once ancient and future-facing.</p>
+  <p class="rv"><i>Neither strictly art nor design.</i></p>
 </section>
 
 <main>
@@ -305,10 +320,7 @@
 <section id="work">
   <div class="head">
     <h2 class="rv">Sky <i>and</i> Stone</h2>
-    <div class="note rv">
-      <p>A first collection inspired by New Mexico: vast skies, mineral landscapes, desert light, and the contrast between celestial space and grounded matter.</p>
-      <p><b>Sky</b> is light made physical: atmosphere, reflection, celestial movement. <b>Stone</b> is grounded and mineral: gravity, weight, permanence, form that holds its place.</p>
-    </div>
+    <div class="note rv"><p>A first collection, drawn from New Mexico: vast sky, mineral ground.</p></div>
   </div>
 
   <a class="piece bleed rv" id="cirrus" href="#cirrus" data-title="Cirrus Table" data-kind="Altar table no. 1" data-collection="Sky and Stone"
@@ -332,7 +344,7 @@
   <div class="sub">
     <div class="t rv">
       <h3>Sky, held</h3>
-      <p>Polished mirror raised on raw mineral: sky caught and held, anchored to stone. Each mirror is one of a kind, produced in series, a reflective form married to a single stone: calcite, selenite, obsidian, pyrite, sapphire. Large-scale floor mirrors in development.</p>
+      <p>Polished mirror on raw stone. Each one of a kind, produced in series.</p>
     </div>
     <figure class="rv"><img src="images/blue-calcite-abstract.jpg" alt="Blue calcite against a polished mirror" width="1682" height="1684" loading="lazy" decoding="async" /></figure>
   </div>
@@ -389,7 +401,6 @@
 
   <div class="head" id="objects">
     <h2 class="rv">Objects</h2>
-    <div class="note rv"><p>Sculpture, adornment, and light. Pricing and availability on request.</p></div>
   </div>
 
   <div class="salon">
@@ -448,43 +459,43 @@
 <section id="materials">
   <div class="head">
     <h2 class="rv">Materials</h2>
-    <div class="note rv"><p>The stone is never only a pedestal. It is half of the work: matter pulled from the ground, joined to light and reflection. Each brings its own weight, color, and memory into the object.</p></div>
+    <div class="note rv"><p>The stone is never only a pedestal.</p></div>
   </div>
   <div class="stones">
     <div class="stone rv">
       <img src="images/materials/selenite.jpg" alt="Raw selenite, close" width="364" height="446" loading="lazy" decoding="async" />
       <h3>Selenite</h3>
-      <p>Translucent gypsum, grown in long crystal beds. A lunar stone that carries light through its body and seems to glow from within.</p>
+      <p>Lunar, lit from within.</p>
       <p class="in">In <a href="#cirrus">Cirrus</a>, <a href="#dolmen">Dolmen</a>, <a href="#selene">Selene</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/calcite.jpg" alt="Blue calcite, close" width="560" height="700" loading="lazy" decoding="async" />
       <h3>Calcite</h3>
-      <p>Soft sky-blue and luminous white. A cool, banded mass that reads like clouded light made solid, the nearest the ground comes to atmosphere.</p>
+      <p>Clouded light made solid.</p>
       <p class="in">In <a href="#zenith">Zenith</a>, <a href="#mirage">Mirage</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/obsidian.jpg" alt="Raw obsidian, close" width="540" height="675" loading="lazy" decoding="async" />
       <h3>Obsidian</h3>
-      <p>Volcanic glass cooled in an instant. The oldest mirror humankind knew: dark, depthless, made for scrying.</p>
+      <p>The oldest mirror.</p>
       <p class="in">In <a href="#scry">Scry</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/pyrite.jpg" alt="Raw pyrite, close" width="520" height="650" loading="lazy" decoding="async" />
       <h3>Pyrite</h3>
-      <p>Crystalline gold struck from rock. Hard geometry and a warm metallic fire that catches and throws the light.</p>
+      <p>Gold struck from rock.</p>
       <p class="in">In <a href="#dyad-in-pyrite">Dyad in Pyrite</a>, <a href="#weight-of-glimmer">The Weight of Glimmer</a>, <a href="#ore-i">Ore I</a>, <a href="#ore-ii">Ore II</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/sapphire.jpg" alt="Raw sapphire, close" width="400" height="500" loading="lazy" decoding="async" />
       <h3>Sapphire</h3>
-      <p>Deep mineral blue, the weight of night held in a single stone. Rare, dense, and quietly luminous.</p>
+      <p>The weight of night.</p>
       <p class="in">In <a href="#reflecting-pool">Reflecting Pool</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/quartz.jpg" alt="Quartz crystal lit from within" width="341" height="426" loading="lazy" decoding="async" />
       <h3>Quartz</h3>
-      <p>Rock crystal, clear and six-sided. It takes in light and gives it back from within.</p>
+      <p>Light held in crystal.</p>
       <p class="in">In <a href="#dropshine-i">DropShine I</a>, <a href="#dropshine-ii">II</a>, <a href="#dropshine-iii">III</a>, <a href="#dropshine-drips">Drips</a></p>
     </div>
   </div>
@@ -500,28 +511,30 @@
       <figcaption>Mirror maquettes in the studio.</figcaption>
     </figure>
     <div class="txt rv">
-      <p>ANDII grows out of <a href="https://www.chilabstudio.com" target="_blank" rel="noopener">ChiLab Studio</a>, the Chicago fabrication studio where Ben and Ally have spent years making ambitious work for artists, architects, brands, and public spaces. Here the center of gravity shifts from fabrication-for-hire to original authorship. Same hands. New voice.</p>
-      <p>The name echoes the alchemists’ <em>androgyny</em>, the union of opposites. AND is conjunction and partnership, a meeting point; II is two authors, two energies, two material histories. The work is made to be lived with, released in editions for the collectible and gallery context.</p>
+      <p class="lead">An authored practice by Ben Stagl and Ally Reza.</p>
+      <p>AND is conjunction. II is two distinct voices, standing together.</p>
       <div class="makers">
         <div>
           <h3><a href="https://www.benstagl.com" target="_blank" rel="noopener">Ben Stagl</a></h3>
           <div class="who">Analog · Digital · Alchemist</div>
-          <p>Artist and fabricator with an MFA in Sculpture from the School of the Art Institute of Chicago. Two decades of making for artists, architects, and public spaces, including permanent public works across Chicago and beyond.</p>
+          <p>Artist. MFA in Sculpture, School of the Art Institute of Chicago. Permanent public works across Chicago and beyond.</p>
         </div>
         <div>
           <h3><a href="https://www.rezally.com" target="_blank" rel="noopener">Ally Reza</a></h3>
           <div class="who">Ritual · Material · Specialist</div>
-          <p>Artist and maker working across sculpture, lighting, and object design, from collectible editions to permanent installations.</p>
+          <p>Artist and maker across sculpture, lighting, and object design.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="coda"><p class="rv"><i>ANDII wants to remain.</i></p></section>
+
 <section class="inquire" id="inquire">
   <div class="l">
     <h2 class="rv">Inquire</h2>
-    <p>For collection inquiries, gallery representation, and commissions, we would be glad to hear from you. Or write to <a href="mailto:inquiries@andii.com">inquiries@andii.com</a>.</p>
+    <p>Acquisitions, representation, and commissions.<br><a href="mailto:inquiries@andii.com">inquiries@andii.com</a></p>
   </div>
   <form class="contact" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="e2f593b1-7809-438c-82d2-3768283dce57">
@@ -543,11 +556,12 @@
 <footer>
   <div class="mk">ANDII</div>
   <div>
-    Authored collectible design — Ben Stagl + Ally Reza<br>
-    Raw stone and mineral · Sky and Stone · Chicago, IL<br>
+    Ben Stagl + Ally Reza · Chicago<br>
     Fabrication by <a href="https://www.chilabstudio.com" target="_blank" rel="noopener">ChiLab Studio</a>
   </div>
 </footer>
+
+<div class="cursor" aria-hidden="true">View</div>
 
 <dialog class="pv" id="pv" aria-label="Piece detail">
   <button class="x" type="button" data-close>Close</button>
@@ -617,6 +631,20 @@
   document.querySelectorAll('.stone .in a').forEach(function(a){a.addEventListener('click',function(e){
     var i=pieces.findIndex(function(p){return '#'+p.id===a.getAttribute('href');});if(i>-1){e.preventDefault();open(i);}
   });});
+
+  /* view cursor */
+  var cur2=document.querySelector('.cursor');
+  if(cur2&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var still=window.matchMedia('(prefers-reduced-motion:reduce)').matches, x=0,y=0,cx=0,cy=0;
+    document.addEventListener('mousemove',function(e){x=e.clientX;y=e.clientY;if(still){cur2.style.translate=x+'px '+y+'px';}});
+    if(!still)(function tick(){cx+=(x-cx)*.2;cy+=(y-cy)*.2;cur2.style.translate=cx+'px '+cy+'px';requestAnimationFrame(tick);})();
+    pieces.forEach(function(p){
+      p.style.cursor='none';
+      p.addEventListener('mouseenter',function(){cur2.classList.add('on');});
+      p.addEventListener('mouseleave',function(){cur2.classList.remove('on');});
+    });
+    pv.addEventListener('close',function(){cur2.classList.remove('on');});
+  }
 
   /* inquire about a piece */
   var f=document.getElementById('contactForm'), status=f.querySelector('.status');
