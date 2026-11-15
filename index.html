@@ -140,10 +140,7 @@
          padding:0 var(--pad);align-items:start}
   .salon>.piece{grid-column:var(--c,span 4);margin-top:var(--t,0)}
 
-  .band{position:relative;margin:clamp(140px,20vh,240px) 0}
-  .band img{width:100%;height:min(90vh,900px);object-fit:cover;object-position:50% 50%}
-  .band p{position:absolute;left:var(--pad);bottom:clamp(22px,4vh,44px);font-family:var(--display);font-style:italic;
-          font-size:clamp(24px,2.6vw,40px);line-height:1.1}
+  #objects{margin-top:clamp(140px,20vh,240px)}
 
   /* materials */
   #materials{padding-top:clamp(160px,22vh,260px)}
@@ -273,7 +270,6 @@
     .salon>.piece{margin-top:0}
     .salon>.piece:nth-child(odd){grid-column:1/6}
     .salon>.piece:nth-child(even){grid-column:2/7}
-    .band img{height:70vh}
     .studio{gap:40px}
     .coda{min-height:0;padding:120px var(--pad) 72px}
     .stone .en{font-size:16px}
@@ -337,14 +333,6 @@
     <div class="note rv"><p>A first collection, drawn from New Mexico: vast sky, mineral ground.</p></div>
   </div>
 
-  <a class="piece bleed rv" id="cirrus" href="#cirrus" data-title="Cirrus Table" data-kind="Altar table no. 1" data-collection="Sky and Stone"
-     data-material="Selenite" data-images="altar-table-1.jpg,altar-table-2.jpg">
-    <figure>
-      <div class="ph"><img src="images/altar-table-1.jpg" alt="Cirrus Table, a long low slab of raw selenite" width="1448" height="1086" loading="lazy" decoding="async" /></div>
-      <figcaption><h3>Cirrus Table</h3><span class="m">Altar table no. 1 · Selenite</span></figcaption>
-    </figure>
-  </a>
-
   <div class="offset">
     <a class="piece edge rv" id="dolmen" href="#dolmen" data-title="Dolmen Table" data-kind="Altar table no. 2" data-collection="Sky and Stone"
        data-material="Selenite" data-images="altar-dolmen-1.jpg">
@@ -407,11 +395,6 @@
       </figure>
     </a>
   </div>
-
-  <figure class="band">
-    <img src="images/group-mirrors.jpg" alt="The Sky and Stone mirrors together, each on its own stone" width="1448" height="1086" loading="lazy" decoding="async" />
-    <p>One of a kind, produced in series.</p>
-  </figure>
 
   <div class="head" id="objects">
     <h2 class="rv">Objects</h2>
@@ -495,7 +478,7 @@
       <h3>Selenite</h3>
       <p class="en">Clarity, cleansing</p>
       <p>Gypsum crystal that carries light through its body.</p>
-      <p class="in">In <a href="#cirrus">Cirrus</a>, <a href="#dolmen">Dolmen</a>, <a href="#selene">Selene</a></p>
+      <p class="in">In <a href="#dolmen">Dolmen</a>, <a href="#selene">Selene</a></p>
     </div>
     <div class="stone rv">
       <img src="images/materials/calcite.jpg" alt="Blue calcite, close" width="560" height="700" loading="lazy" decoding="async" />
